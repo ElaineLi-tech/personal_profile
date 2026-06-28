@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>程序员 · 李依玲</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="subpage.css" />
+  <style>
+    .project-showcase {
+      display: flex; flex-wrap: wrap; gap: 24px; justify-content: center;
+      margin-top: 20px;
+    }
+    .phone-frame {
+      width: 220px; background: #1a1a1a;
+      border-radius: 38px; padding: 8px;
+      box-shadow: 0 12px 32px rgba(0,0,0,.3), inset 0 0 0 2px #333;
+      transition: transform .3s, box-shadow .3s;
+    }
+    .phone-frame:hover {
+      transform: translateY(-6px) rotate(-2deg);
+      box-shadow: 0 20px 48px rgba(0,0,0,.4);
+    }
+    .phone-screen {
+      width: 100%; aspect-ratio: 9/19.5;
+      background: #fff; border-radius: 30px; overflow: hidden;
+      position: relative;
+    }
+    .phone-screen img {
+      width: 100%; height: 100%; object-fit: contain;
+      display: block;
+    }
+    .phone-notch {
+      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 80px; height: 24px; background: #1a1a1a;
+      border-radius: 0 0 16px 16px; z-index: 10;
+    }
+    .phone-camera {
+      position: absolute; top: 8px; left: 50%; transform: translateX(-50%);
+      width: 12px; height: 12px; background: #333;
+      border-radius: 50%; z-index: 11;
+    }
+    .project-detail {
+      margin-top: 16px; padding: 20px;
+      background: #faf7f1; border-radius: var(--radius);
+    }
+    .project-detail h5 { margin: 0 0 10px; font-size: 13px; letter-spacing: 2px; color: var(--accent); text-transform: uppercase; }
+    .project-detail ul { list-style: none; padding: 0; margin: 0; }
+    .project-detail li {
+      padding: 8px 0; border-bottom: 1px dashed var(--line);
+      font-size: 14px; color: #444; line-height: 1.6;
+    }
+    .project-detail li:last-child { border-bottom: none; }
+    .project-detail li::before {
+      content: '▸'; color: var(--accent); margin-right: 8px;
+    }
+    .skill-summary {
+      max-width: 800px; margin: 0 auto 40px;
+      font-size: 15px; color: #444; line-height: 1.8;
+    }
+    @media (max-width: 900px) {
+      .project-showcase { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body class="subpage">
+  <header class="nav">
+    <a href="index.html" class="logo">Elaine.</a>
+    <nav class="nav-links">
+      <a href="index.html#profile">Profile</a>
+      <a href="index.html#traits">Traits</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#gallery">Gallery</a>
+      <a href="index.html#contact" class="btn-pill">Contact</a>
+    </nav>
+  </header>
+
+  <section class="sub-hero">
+    <a class="back-link" href="index.html#skills">← Back to Skills</a>
+    <span class="kicker">主动技能 / 01</span>
+    <h1 class="sub-title">PROGRAMMER<br/><em>· engineer ·</em></h1>
+    <p class="sub-lead">
+      擅长打造三类完整线上产品：高稳定多人使用的后台服务、搭载 AI 自动处理功能的智能工具、微信小程序 / 手机网页轻量化应用。
+    </p>
+    <div class="quick-stats">
+      <div><strong>5+</strong><span>Years</span></div>
+      <div><strong>20+</strong><span>Projects</span></div>
+      <div><strong>10+</strong><span>Clients</span></div>
+      <div><strong>3</strong><span>Core Areas</span></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <header class="section-head">
+      <span class="kicker">技能概览</span>
+      <h2 class="section-title">SKILL <em>SUMMARY</em></h2>
+    </header>
+    <p class="skill-summary">
+      从 0 到 1 搭建完整项目，兼顾流畅使用、数据安全与趣味互动。擅长把复杂问题拆解成可落地的小模块，快速交付可直接商用的成品。
+    </p>
+    <div class="stack-grid">
+      <div class="stack-card">
+        <h4>后端开发</h4>
+        <ul><li>SpringBoot</li><li>Node.js</li><li>PostgreSQL</li><li>MongoDB</li><li>Redis</li></ul>
+      </div>
+      <div class="stack-card">
+        <h4>前端开发</h4>
+        <ul><li>React / TypeScript</li><li>Vue 3</li><li>TailwindCSS</li><li>微信小程序</li><li>PWA</li></ul>
+      </div>
+      <div class="stack-card">
+        <h4>AI 工程</h4>
+        <ul><li>LangChain</li><li>向量数据库</li><li>RAG 检索</li><li>Function Calling</li><li>大模型 API</li></ul>
+      </div>
+      <div class="stack-card">
+        <h4>工程化</h4>
+        <ul><li>CI/CD</li><li>Serverless</li><li>BaaS</li><li>Git Workflow</li><li>性能优化</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <header class="section-head">
+      <span class="kicker">代表项目</span>
+      <h2 class="section-title">SELECTED <em>PROJECTS</em></h2>
+    </header>
+    <div class="cases">
+      <article class="case">
+        <div class="case-thumb c1" aria-hidden="true"></div>
+        <div class="case-body">
+          <span class="case-tag">AI · SaaS</span>
+          <h4>AI 智能对话客服系统</h4>
+          <p>独立搭建垂直领域智能客服，实现 7×24 小时自动化业务问答，大大减少人工客服压力。</p>
+          <ul class="case-meta"><li>SpringBoot</li><li>LangChain4j</li><li>Milvus</li><li>MongoDB</li><li>Redis</li></ul>
+          <div class="project-detail">
+            <h5>核心能力</h5>
+            <ul>
+              <li>搭建 AI 对话架构，支持多轮会话</li>
+              <li>RAG 知识库，精准回答业务问题</li>
+              <li>AI 自动执行订单查询、退款等操作</li>
+              <li>高峰期服务稳定不卡顿</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-thumb c2" aria-hidden="true"></div>
+        <div class="case-body">
+          <span class="case-tag">AI · EdTech</span>
+          <h4>AI 驱动跨端智能学习平台</h4>
+          <p>搭建 Web + 微信小程序双端学习产品，用 AI 辅助内容生成和智能复习，快速上线可迭代。</p>
+          <ul class="case-meta"><li>React</li><li>TypeScript</li><li>Supabase</li><li>PostgreSQL</li><li>LLM API</li></ul>
+          <div class="project-detail">
+            <h5>成品展示</h5>
+            <div class="project-showcase">
+              <div class="phone-frame"><div class="phone-screen"><div class="phone-notch"></div><div class="phone-camera"></div><img src="pic_wordhub/2567f4fdc49902066f0fe7f236f47e.JPG" alt="产品截图 1" /></div></div>
+              <div class="phone-frame"><div class="phone-screen"><div class="phone-notch"></div><div class="phone-camera"></div><img src="pic_wordhub/2a2cf5b6a2c1e6d2cdc30a9242ab92.JPG" alt="产品截图 2" /></div></div>
+              <div class="phone-frame"><div class="phone-screen"><div class="phone-notch"></div><div class="phone-camera"></div><img src="pic_wordhub/2a7d557712f8f715fbe20d6d5d6485.JPG" alt="产品截图 3" /></div></div>
+              <div class="phone-frame"><div class="phone-screen"><div class="phone-notch"></div><div class="phone-camera"></div><img src="pic_wordhub/6f85358b773e753acd2b63b8977f82.JPG" alt="产品截图 4" /></div></div>
+              <div class="phone-frame"><div class="phone-screen"><div class="phone-notch"></div><div class="phone-camera"></div><img src="pic_wordhub/9e7c8c77c5590fff90f4799cfea9d6.JPG" alt="产品截图 5" /></div></div>
+              <div class="phone-frame"><div class="phone-screen"><div class="phone-notch"></div><div class="phone-camera"></div><img src="pic_wordhub/aa3783304b350802998335f2f08ef7.JPG" alt="产品截图 6" /></div></div>
+              <div class="phone-frame"><div class="phone-screen"><div class="phone-notch"></div><div class="phone-camera"></div><img src="pic_wordhub/ba0a35db642ef8df1c87bc2004181f.JPG" alt="产品截图 7" /></div></div>
+              <div class="phone-frame"><div class="phone-screen"><div class="phone-notch"></div><div class="phone-camera"></div><img src="pic_wordhub/c765068de0a2b0a63cdbba69d5b907.JPG" alt="产品截图 8" /></div></div>
+              <div class="phone-frame"><div class="phone-screen"><div class="phone-notch"></div><div class="phone-camera"></div><img src="pic_wordhub/ced66f50abed2c0d3d23d5ba7bd1c3.JPG" alt="产品截图 9" /></div></div>
+            </div>
+          </div>
+          <div class="project-detail">
+            <h5>核心能力</h5>
+            <ul>
+              <li>一套代码同时运行在 Web 和小程序</li>
+              <li>AI 自动拆分开发任务，加速迭代</li>
+              <li>智能缓存减少重复调用，接口更稳定</li>
+              <li>自动化构建部署，版本迭代更规范</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-thumb c3" aria-hidden="true"></div>
+        <div class="case-body">
+          <span class="case-tag">MiniApp</span>
+          <h4>家庭资产归档微信小程序</h4>
+          <p>从零完成物品管理小程序，支持多图上传、分类归档、游戏化成长，兼顾离线可用和云端同步。</p>
+          <ul class="case-meta"><li>微信小程序</li><li>CloudBase</li><li>Serverless</li></ul>
+          <div class="project-detail">
+            <h5>核心能力</h5>
+            <ul>
+              <li>多维度物品管理，自动统计资产价值</li>
+              <li>多清单独立空间，数据相互隔离</li>
+              <li>离线可用，联网自动同步</li>
+              <li>游戏化成长系统，增加使用乐趣</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-thumb c4" aria-hidden="true"></div>
+        <div class="case-body">
+          <span class="case-tag">AI · Tool</span>
+          <h4>AI 证件照生成机器人</h4>
+          <p>接入大模型实现图片规格识别和证件照自动生成，日均稳定处理 300+ 用户请求。</p>
+          <ul class="case-meta"><li>大模型 API</li><li>图片处理</li><li>移动端集成</li></ul>
+          <div class="project-detail">
+            <h5>核心能力</h5>
+            <ul>
+              <li>AI 自动识别图片规格和要求</li>
+              <li>一键生成符合规范的证件照</li>
+              <li>稳定服务，支持高并发</li>
+              <li>可集成至移动端自助服务</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="sub-cta">
+    <h2 class="big-name">HAVE A<br/>PROJECT?</h2>
+    <a class="btn-pill big" href="mailto:hello@elaine.studio">START A CONVERSATION →</a>
+    <a class="back-link bottom" href="index.html#skills">← 返回主页面</a>
+  </section>
+
+  <footer class="footer sub-footer">
+    <p class="copyright">© 2026 Elaine. — Designed in Shanghai.</p>
+  </footer>
+</body>
+</html>

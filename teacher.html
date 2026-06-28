@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>独立老师 · 李依玲</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="subpage.css" />
+  <style>
+    .proof-gallery {
+      display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .proof-card {
+      background: #fff; border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 16px;
+      text-align: center; min-width: 180px;
+      transition: transform .25s, box-shadow .25s;
+    }
+    .proof-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .proof-card img {
+      max-width: 160px; max-height: 200px;
+      border-radius: 8px; object-fit: contain;
+      cursor: pointer; transition: transform .2s;
+    }
+    .proof-card img:hover { transform: scale(1.05); }
+    #proof-lightbox {
+      position: fixed; inset: 0; background: rgba(0,0,0,.9);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 9999; opacity: 0; pointer-events: none;
+      transition: opacity .3s;
+    }
+    #proof-lightbox.open { opacity: 1; pointer-events: auto; }
+    #proof-lightbox .lb-img { max-width: 90vw; max-height: 90vh; border-radius: 16px; }
+    #proof-lightbox .lb-close {
+      position: absolute; top: 20px; right: 20px;
+      color: #fff; font-size: 32px; cursor: pointer;
+      width: 48px; height: 48px; display: flex;
+      align-items: center; justify-content: center;
+    }
+    .proof-card p {
+      margin: 10px 0 0; font-size: 12px; color: #666;
+      letter-spacing: 1px;
+    }
+    .case-detail {
+      margin-top: 16px; padding: 20px;
+      background: #faf7f1; border-radius: var(--radius);
+    }
+    .case-detail h5 { margin: 0 0 12px; font-size: 13px; letter-spacing: 2px; color: var(--accent); text-transform: uppercase; }
+    .case-detail p { margin: 0 0 12px; color: #555; font-size: 14px; line-height: 1.7; }
+    .case-detail ul { list-style: none; padding: 0; margin: 0; }
+    .case-detail li {
+      padding: 8px 0; border-bottom: 1px dashed var(--line);
+      font-size: 14px; color: #444; line-height: 1.6;
+    }
+    .case-detail li:last-child { border-bottom: none; }
+    .case-detail li::before { content: '▸'; color: var(--accent); margin-right: 8px; }
+    .result-highlight {
+      display: inline-block; background: #111; color: #fff;
+      padding: 4px 12px; border-radius: 4px;
+      font-weight: 600; font-size: 14px;
+      margin-top: 8px;
+    }
+    .advantage-box {
+      background: linear-gradient(135deg, #fff6e3, #ffd4a3);
+      border-radius: var(--radius); padding: 24px 28px;
+      margin-top: 20px;
+    }
+    .advantage-box h4 { margin: 0 0 16px; font-size: 16px; color: #111; }
+    .advantage-box ul { list-style: none; padding: 0; margin: 0; }
+    .advantage-box li { padding: 6px 0; font-size: 14px; color: #444; line-height: 1.7; }
+    .advantage-box li::before { content: '✓'; color: var(--accent); margin-right: 10px; font-weight: bold; }
+  </style>
+</head>
+<body class="subpage">
+  <header class="nav">
+    <a href="index.html" class="logo">Elaine.</a>
+    <nav class="nav-links">
+      <a href="index.html#profile">Profile</a>
+      <a href="index.html#traits">Traits</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#gallery">Gallery</a>
+      <a href="index.html#contact" class="btn-pill">Contact</a>
+    </nav>
+  </header>
+
+  <section class="sub-hero">
+    <a class="back-link" href="index.html#skills">← Back to Skills</a>
+    <span class="kicker">主动技能 / 02</span>
+    <h1 class="sub-title">INDEPENDENT<br/><em>· teacher ·</em></h1>
+    <p class="sub-lead">
+      英语专项导师 · 专注雅思 / 托福 / 上海中高考<br/>
+      亲切热情 · 课堂互动感强 · 定制专属学习方案
+    </p>
+    <div class="quick-stats">
+      <div><strong>8</strong><span>Years</span></div>
+      <div><strong>IELTS 8</strong><span>总分</span></div>
+      <div><strong>TEM-8</strong><span>专业八级</span></div>
+      <div><strong>4.9</strong><span>Avg. Rating</span></div>
+    </div>
+  </section>
+
+  <!-- 教学方向 -->
+  <section class="section">
+    <header class="section-head">
+      <span class="kicker">教学主攻</span>
+      <h2 class="section-title">TEACHING <em>DOMAINS</em></h2>
+    </header>
+    <div class="stack-grid">
+      <div class="stack-card">
+        <h4>出国语言</h4>
+        <ul><li>雅思全科</li><li>托福全科</li><li>听力专项深耕</li><li>短期冲刺计划</li></ul>
+      </div>
+      <div class="stack-card">
+        <h4>国内应试</h4>
+        <ul><li>上海中考英语</li><li>上海高考英语</li><li>考点精准提分</li><li>语法体系梳理</li></ul>
+      </div>
+      <div class="stack-card">
+        <h4>核心方法</h4>
+        <ul><li>高效单词记忆法</li><li>语法底层逻辑</li><li>题型答题技巧</li><li>短板针对性补齐</li></ul>
+      </div>
+      <div class="stack-card">
+        <h4>教学风格</h4>
+        <ul><li>不填鸭式灌输</li><li>课堂互动感强</li><li>定制学习方案</li><li>稳步提升分数</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 教学证明 -->
+  <section class="section alt">
+    <header class="section-head">
+      <span class="kicker">资质证明</span>
+      <h2 class="section-title">CERTIFICATES <em>& RESULTS</em></h2>
+    </header>
+    <div class="proof-gallery">
+      <div class="proof-card">
+        <img src="pics_englishteacher/雅思成绩.jpg" alt="雅思成绩" onclick="openProofLightbox(this.src)" />
+        <p>雅思总分 8 分</p>
+      </div>
+      <div class="proof-card">
+        <img src="pics_englishteacher/教资.jpg" alt="教师资格证" onclick="openProofLightbox(this.src)" />
+        <p>教学资质认证</p>
+      </div>
+      <div class="proof-card">
+        <img src="pics_englishteacher/好评截图1.png" alt="学员好评 1" onclick="openProofLightbox(this.src)" />
+        <p>学员好评</p>
+      </div>
+      <div class="proof-card">
+        <img src="pics_englishteacher/好评截图2.png" alt="学员好评 2" onclick="openProofLightbox(this.src)" />
+        <p>学员好评</p>
+      </div>
+      <div class="proof-card">
+        <img src="pics_englishteacher/好评截图3.png" alt="学员好评 3" onclick="openProofLightbox(this.src)" />
+        <p>学员好评</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 教学案例 -->
+  <section class="section">
+    <header class="section-head">
+      <span class="kicker">真实案例</span>
+      <h2 class="section-title">TEACHING <em>CASES</em></h2>
+    </header>
+    <div class="cases">
+      <article class="case">
+        <div class="case-thumb c1" aria-hidden="true"></div>
+        <div class="case-body">
+          <span class="case-tag">雅思 · 出国备考</span>
+          <h4>雅思听力 5.5 → 7.5，4 周冲刺</h4>
+          <p>大二学生，备考英国硕士，听力长期卡 5.5 分，跟不上语速，同义替换识别不出。</p>
+          <div class="case-detail">
+            <h5>教学方案</h5>
+            <ul>
+              <li>梳理错题，定位薄弱点：数字考点、地图题、长独白</li>
+              <li>定制精听计划，传授分层速记技巧</li>
+              <li>总结 200 组雅思高频同义替换词</li>
+              <li>每周限时模考，针对性训练预判能力</li>
+            </ul>
+            <span class="result-highlight">仅 4 周 → 听力 7.5，总分 7.0，顺利达标</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-thumb c2" aria-hidden="true"></div>
+        <div class="case-body">
+          <span class="case-tag">雅思 · 工作党</span>
+          <h4>零基础转雅思，首考总分 7.0</h4>
+          <p>毕业 3 年，长期不接触英语，词汇遗忘严重，口语不敢开口，1.5 个月出分。</p>
+          <div class="case-detail">
+            <h5>教学方案</h5>
+            <ul>
+              <li>搭建基础词汇 + 语法框架，场景化背诵捡回单词</li>
+              <li>口语互动式模拟对话，消除开口紧张</li>
+              <li>整理高频话题高分句式</li>
+              <li>写作拆解评分标准，修正中式表达</li>
+            </ul>
+            <span class="result-highlight">1.5 个月 → 首考总分 7.0，阅读 7.5，口语 7.0</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-thumb c3" aria-hidden="true"></div>
+        <div class="case-body">
+          <span class="case-tag">高考 · 上海本地</span>
+          <h4>上海高三英语 90 → 122</h4>
+          <p>高三学生，基础中等，语法句法混乱，阅读主观题、书面表达常年丢分。</p>
+          <div class="case-detail">
+            <h5>教学方案</h5>
+            <ul>
+              <li>系统梳理高考全部核心语法，区分易混长难句</li>
+              <li>针对上海高考阅读主观题，总结原文定位踩分点</li>
+              <li>每周限时全真模拟，错题分类复盘</li>
+              <li>积累高级写作句型，提升书面表达</li>
+            </ul>
+            <span class="result-highlight">一学期 → 高考 122 分，英语成为提分优势</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 教学优势 -->
+  <section class="section alt">
+    <header class="section-head">
+      <span class="kicker">核心优势</span>
+      <h2 class="section-title">KEY <em>ADVANTAGES</em></h2>
+    </header>
+    <div class="advantage-box">
+      <h4>留学备考（雅思 / 托福）</h4>
+      <ul>
+        <li>从零基础到高分冲刺全覆盖，擅长听力专项突破</li>
+        <li>根据备考周期定制短期提分计划</li>
+        <li>解决听力跟不上、写作中式英语、口语不敢开口等难题</li>
+        <li>大量学员短期达到留学申请分数线</li>
+      </ul>
+    </div>
+    <div class="advantage-box" style="margin-top: 16px;">
+      <h4>上海本地中高考学生</h4>
+      <ul>
+        <li>熟悉上海专属考卷考点、阅卷规则</li>
+        <li>不用盲目刷题，精准抓准容易丢分的题型</li>
+        <li>高效背词 + 标准化答题技巧快速拉分</li>
+        <li>适配本地升学需求</li>
+      </ul>
+    </div>
+    <div class="advantage-box" style="margin-top: 16px;">
+      <h4>全程一对一定制课程</h4>
+      <ul>
+        <li>课堂氛围轻松有互动，不填鸭式灌输</li>
+        <li>跟着规划稳步提分，兼顾基础夯实与应试技巧</li>
+        <li>针对性补齐短板，稳步提升分数</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="sub-cta">
+    <h2 class="big-name">WANNA<br/>LEARN?</h2>
+    <a class="btn-pill big" href="mailto:hello@elaine.studio?subject=英语课程咨询">预约试听课 →</a>
+    <a class="back-link bottom" href="index.html#skills">← 返回主页面</a>
+  </section>
+
+  <footer class="footer sub-footer">
+    <p class="copyright">© 2026 Elaine. — Designed in Shanghai.</p>
+  </footer>
+
+  <div id="proof-lightbox" onclick="closeProofLightbox()">
+    <img class="lb-img" src="" alt="放大查看" />
+    <div class="lb-close">&times;</div>
+  </div>
+
+  <script>
+    function openProofLightbox(src) {
+      const lb = document.getElementById('proof-lightbox');
+      lb.querySelector('.lb-img').src = src;
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeProofLightbox() {
+      const lb = document.getElementById('proof-lightbox');
+      lb.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeProofLightbox();
+    });
+  </script>
+</body>
+</html>
