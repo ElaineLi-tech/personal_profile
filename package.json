@@ -1,0 +1,11 @@
+{
+  "name": "personal_profile",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "encrypt:contact": "node scripts/encrypt-contact.js"
+  },
+  "dependencies": {
+    "crypto-js": "^4.2.0"
+  }
+}

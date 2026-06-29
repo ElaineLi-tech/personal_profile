@@ -328,6 +328,32 @@ img { max-width: 100%; display: block; }
   color: #fff;
 }
 
+.secure-contact-grid {
+  align-items: stretch;
+}
+
+.contact-locked,
+.contact-unlocked,
+.phone-number-group {
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.contact-unlocked[hidden] {
+  display: none;
+}
+
+.contact-lock-copy {
+  max-width: 280px;
+  margin: 0;
+  color: #d4d4d4;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
 .qr-image {
   width: 200px;
   height: 200px;
@@ -344,12 +370,16 @@ img { max-width: 100%; display: block; }
   font-size: 32px;
   font-weight: 700;
   color: var(--accent);
-  text-decoration: none;
   padding: 20px 0;
+  letter-spacing: 1px;
+}
+
+.phone-number.is-link {
+  text-decoration: none;
   transition: color .2s;
 }
 
-.phone-number:hover {
+.phone-number.is-link:hover {
   color: #fff;
 }
 
@@ -411,6 +441,11 @@ img { max-width: 100%; display: block; }
   /* Mobile contact styles */
   .contact-grid-new {
     gap: 20px;
+  }
+  .contact-locked,
+  .contact-unlocked,
+  .phone-number-group {
+    min-height: 200px;
   }
   .qr-image {
     width: 160px;
