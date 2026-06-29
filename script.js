@@ -87,65 +87,7 @@ document.querySelectorAll('.section, .hero, .footer, .sub-hero').forEach(el => {
   io.observe(el);
 });
 
-/* ---------- Secure contact unlock ---------- */
+/* ---------- Secure contact (removed) ---------- */
 (function initSecureContact() {
-  const data = window.SECURE_CONTACT_DATA;
-  const phoneDisplay = document.getElementById('phoneDisplay');
-  const phoneLink = document.getElementById('phoneLink');
-  const contactHint = document.getElementById('contactHint');
-  const qrLockedState = document.getElementById('qrLockedState');
-  const qrUnlockedState = document.getElementById('qrUnlockedState');
-
-  if (!data || !phoneDisplay || !phoneLink || !contactHint || !qrLockedState || !qrUnlockedState) {
-    return;
-  }
-
-  const maskedPhone = data.maskedPhone || '***';
-  const hashValue = window.location.hash.startsWith('#') ? window.location.hash.slice(1) : '';
-  const params = new URLSearchParams(hashValue);
-  const secret = params.get(data.hashParam || 'k');
-
-  phoneDisplay.textContent = maskedPhone;
-  contactHint.textContent = data.hint || '默认仅展示脱敏联系方式。';
-
-  if (!secret || typeof CryptoJS === 'undefined') {
-    return;
-  }
-
-  const decryptToUtf8 = ciphertext => {
-    try {
-      const bytes = CryptoJS.AES.decrypt(ciphertext, secret);
-      return bytes.toString(CryptoJS.enc.Utf8);
-    } catch (error) {
-      return '';
-    }
-  };
-
-  const validationText = decryptToUtf8(data.validatorCiphertext);
-  if (validationText !== 'contact-access-granted') {
-    return;
-  }
-
-  const decryptedPhone = decryptToUtf8(data.phoneCiphertext);
-  const decryptedQr = decryptToUtf8(data.qrCiphertext);
-  if (!decryptedPhone || !decryptedQr.startsWith('data:image/')) {
-    return;
-  }
-
-  const qrImage = document.createElement('img');
-  qrImage.className = 'qr-image';
-  qrImage.alt = '微信二维码';
-  qrImage.src = decryptedQr;
-
-  qrUnlockedState.innerHTML = '';
-  qrUnlockedState.appendChild(qrImage);
-  qrUnlockedState.insertAdjacentHTML('beforeend', '<p class="contact-subtitle">二维码已解锁，请使用微信扫码添加。</p>');
-  qrUnlockedState.hidden = false;
-  qrLockedState.hidden = true;
-
-  phoneDisplay.hidden = true;
-  phoneLink.hidden = false;
-  phoneLink.href = `tel:${decryptedPhone}`;
-  phoneLink.textContent = decryptedPhone;
-  contactHint.textContent = '已通过专属链接解锁完整微信与手机号信息。';
+  // 加密功能已移除，二维码直接展示
 })();
